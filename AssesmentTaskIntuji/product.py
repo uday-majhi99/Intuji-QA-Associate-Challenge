@@ -22,19 +22,20 @@ print("Women dress page : Expected Value for women dress page Found")
 driver.find_element(By.XPATH, "//body[1]/section[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/li[1]/a[1]").click() #Clicked on product details
 time.sleep(2)
 
+# Verify Product name
 product_name = driver.find_element(By.XPATH, "//h2[normalize-space()='Sleeveless Dress']").text
 assert product_name != "", "[❌] Product name not found"
-print(f"[✅] Product Name: {product_name}")
+print(f" Product Name: {product_name}")
 
-# ✅ Verify Product Price
+# Verify Product Price
 price = driver.find_element(By.XPATH, "//span[normalize-space()='Rs. 1000']").text
 assert price.startswith("Rs."), "[❌] Product price not found or invalid"
-print(f"[✅] Product Price: {price}")
+print(f" Product Price: {price}")
 
-# ✅ Verify Availability
+#  Verify Availability
 availability = driver.find_element(By.CSS_SELECTOR, "body > section:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > p:nth-child(6)").text
 assert "In Stock" in availability, "[❌] Product availability not confirmed"
-print(f"[✅] Availability: {availability}")
+print(f" Availability: {availability}")
 
 
 # Close the browser
