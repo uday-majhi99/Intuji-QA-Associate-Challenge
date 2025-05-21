@@ -73,9 +73,11 @@ time.sleep(3)
 try:
     logged_in_text = driver.find_element(By.XPATH, "//i[@class='fa fa-user']").text
     assert name.split()[0] in logged_in_text
-    print(f"[✅] Registration successful. User is logged in as: {logged_in_text}")
+    print(f"Registration successful. User is logged in as: {logged_in_text}")
 except:
-    print("[❌] Login verification failed.")
+    print(" Login verification failed.")
+
+
 
 # Save session cookies
 cookies = driver.get_cookies()
