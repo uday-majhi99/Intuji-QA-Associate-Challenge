@@ -3,7 +3,6 @@ import time
 from product import dress_site
 from cart import add_product_to_cart
 from checkoutAndPayment import complete_checkout
-from LogoutLogin import login_site
 from selenium.webdriver.common.by import By
 
 email = "umajhi1@gmail.com"
@@ -25,8 +24,6 @@ complete_checkout(driver)
 driver.find_element(By.CSS_SELECTOR, "a[href='/logout']").click()
 time.sleep(2)
 
-#Relogin
-driver = login_site(email, password)
 
  # Pause if needed and quit
 time.sleep(5)
