@@ -44,10 +44,13 @@ time.sleep(2)
 driver.find_element(By.XPATH, "//body[1]/section[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/li[1]/a[1]").click() #Clicked on dress button
 
 driver.find_element(By.XPATH, "//input[@id='quantity']").click()
+input_field = driver.find_element(By.XPATH, "//input[@id='quantity']")
+input_field.clear()
 driver.find_element(By.XPATH, "//input[@id='quantity']").send_keys(3)
 driver.find_element(By.XPATH, "//button[normalize-space()='Add to cart']").click()
-driver.find_element(By.XPATH, "//button[normalize-space()='Continue Shopping']").click()
 time.sleep(2)
+
+
 
 
 driver.quit()
