@@ -1,13 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from login import login_site
 
 # Start Chrome WebDriver (no options used)
 driver = webdriver.Chrome()
 driver.maximize_window()
 
-# Navigate to the products page
-driver.get("https://automationexercise.com/products")
+email = "umajhi1@gmail.com"
+password = "Password@123"
+
+driver = login_site(email, password)
 
 driver.find_element(By.XPATH, "(//i[@class='fa fa-plus'])[1]").click() #Clicke on women button
 time.sleep(2)

@@ -1,32 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from login import login_site
 
 # User credentials (must already be registered)
 email = "umajhi1@gmail.com"
 password = "Password@123"
-# Initialize browser
-driver = webdriver.Chrome()
-driver.get("https://automationexercise.com/login")
-driver.maximize_window()
-time.sleep(2)
 
-# Fill in login form
-driver.find_element(By.XPATH, "//input[@data-qa='login-email']").send_keys(email)
-driver.find_element(By.XPATH, "//input[@placeholder='Password']").send_keys(password)
-
-# Click Login
-driver.find_element(By.XPATH, "//button[normalize-space()='Login']").click()
-time.sleep(3)
-
-# ✅ Verify login success
-try:
-    logged_in_as = driver.find_element(By.XPATH, "//a[contains(text(), 'Logged in as')]").text
-    assert "Logged in as" in logged_in_as, "[❌] Login failed."
-    print(f"[✅] Login successful. {logged_in_as}")
-except Exception as e:
-    print("[❌] Login failed.")
-    print(e)
+driver = login_site(email, password)
 
 driver.find_element(By.XPATH, "(//i[@class='fa fa-plus'])[1]").click()
 time.sleep(2)
