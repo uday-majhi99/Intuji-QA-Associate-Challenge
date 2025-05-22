@@ -6,6 +6,9 @@ from checkoutAndPayment import complete_checkout
 from LogoutLogin import login_site
 from selenium.webdriver.common.by import By
 
+email = "umajhi1@gmail.com"
+password = "Password@123"
+
 # Call the function to register and log in
 driver, email = register_new_user()
 
@@ -23,13 +26,7 @@ driver.find_element(By.CSS_SELECTOR, "a[href='/logout']").click()
 time.sleep(2)
 
 #Relogin
-email = "umajhi1@gmail.com"
-password = "Password@123"
-
 driver = login_site(email, password)
-if driver:
-    # proceed with your actions
-    pass
 
  # Pause if needed and quit
 time.sleep(5)
