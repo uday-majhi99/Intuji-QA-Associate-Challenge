@@ -6,10 +6,7 @@ automation-test-suite/
 ├── product.py                 # Product browsing and detail verification
 ├── cart.py                    # Cart management functions
 ├── checkout.py                # Checkout and fake payment flow
-├── cookies.py                 # Cookie saving and loading logic
-├── utils/                     # Common utilities (optional)
 ├── session_cookies.json       # Stored browser session cookies
-├── requirements.txt           # Python dependencies
 └── README.md                  # Project documentation
 ✅ Features Covered
 User Registration

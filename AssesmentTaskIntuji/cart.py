@@ -22,20 +22,23 @@ def add_product_to_cart(driver):
         time.sleep(2)
 
         # # Click on the product again
-        driver.find_element(By.XPATH, "div[id='Men'] li:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "a[href='/category_products/3']").click()
         time.sleep(2)
 
-        driver.find_element(By.XPATH, "//div[@id='Men']//li[1]").click()
+        driver.find_element(By.XPATH, "//div[@class='col-sm-9 padding-right']//div[2]//div[1]//div[2]//ul[1]//li[1]//a[1]").click()
         time.sleep(2)
 
         # Set quantity
         quantity_input = driver.find_element(By.XPATH, "//input[@id='quantity']")
         quantity_input.click()
         quantity_input.clear()
-        quantity_input.send_keys("3")  # Corrected to a string
+        quantity_input.send_keys("3")
 
         # Add to cart
         driver.find_element(By.XPATH, "//button[normalize-space()='Add to cart']").click()
+        time.sleep(2)
+
+        driver.find_element(By.XPATH, "(//button[normalize-space()='Continue Shopping'])[1]").click()
         time.sleep(2)
 
         print("[✅] Product added to cart successfully.")
